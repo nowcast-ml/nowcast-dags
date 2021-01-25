@@ -9,7 +9,7 @@ branches:
 
 before_script:
   - export IMAGE_TAG="${GCR_HOSTNAME}/${GCR_PROJECT_ID}/$(basename ${TRAVIS_REPO_SLUG})"
+  - echo "${IMAGE_TAG}"
 
 script:
-  - echo "${IMAGE_TAG}"
   - docker build --no-cache --tag "${IMAGE_TAG}:latest" ./airflow
